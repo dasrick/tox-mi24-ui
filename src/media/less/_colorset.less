@@ -1,0 +1,42 @@
+.cs-1 {
+  .getColorSetDefaults(cs1);
+}
+
+.cs-2 {
+  .getColorSetDefaults(cs2);
+}
+
+.cs-3 {
+  .getColorSetDefaults(cs3);
+}
+
+.defineColorSetVars(@colorSetString) {
+  @colorSet-color: '@{colorSetString}-color';
+  @colorSet-bg: '@{colorSetString}-bg';
+  //@colorSet-link-color: '@{colorSetString}-link-color';
+  //@colorSet-link-hover-color: '@{colorSetString}-link-hover-color';
+  //@colorSet-link-active-color: '@{colorSetString}-link-active-color';
+  //@colorSet-link-bg: '@{colorSetString}-link-bg';
+  //@colorSet-link-hover-bg: '@{colorSetString}-link-hover-bg';
+  //@colorSet-link-active-bg: '@{colorSetString}-link-active-bg';
+  //@colorSet-heading-link-color: '@{colorSetString}-heading-link-color';
+  //@colorSet-heading-link-hover-color: '@{colorSetString}-heading-link-hover-color';
+  //@colorSet-heading-link-active-color: '@{colorSetString}-heading-link-active-color';
+  //@colorSet-section-head-bg: '@{colorSetString}-section-head-bg';
+  //@colorSet-section-foot-bg: '@{colorSetString}-section-foot-bg';
+  //@colorSet-border-horizontal-color: '@{colorSetString}-border-horizontal-color';
+  //@colorSet-border-vertical-color: '@{colorSetString}-border-vertical-color';
+}
+
+.getColorSetDefaults(@colorSetString) {
+  .defineColorSetVars(@colorSetString);
+  color: @@colorSet-color;
+  background-color: @@colorSet-bg;
+
+  a {
+    color: @@colorSet-link-color;
+    &:hover {
+      color: @@colorSet-link-hover-color;
+    }
+  }
+}
