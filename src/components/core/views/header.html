@@ -1,0 +1,41 @@
+<!-- navbar header -->
+<div class="navbar-header {{app.settings.navbarHeaderColor}}">
+    <!--
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="fa fa-cog"></i>
+    </button>
+    -->
+    <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll-to="app">
+        <i class="fa fa-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <a href="#/" class="navbar-brand text-lt">
+        <i class="fa fa-circle-o-notch"></i>
+        <img src="https://www.movingimage24.com/typo3conf/ext/mi24_core/Resources/Public/images/movingimage24-logo.png" alt="." class="hide">
+        <span class="hidden-folded m-l-xs">AppName</span>
+    </a>
+    <!-- / brand -->
+</div>
+<!-- / navbar header -->
+
+<!-- navbar collapse -->
+<div class="collapse pos-rlt navbar-collapse box-shadow">
+    <!-- buttons -->
+    <div class="nav navbar-nav hidden-xs">
+        <a href class="btn no-shadow navbar-btn"
+           ng-click="coreVm.settings.asideFolded = !coreVm.settings.asideFolded">
+            <i class="fa {{coreVm.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+        </a>
+    </div>
+    <!-- / buttons -->
+
+    <!-- nabar right -->
+    <div class="nav navbar-nav navbar-right">
+        <a href class="btn no-shadow navbar-btn">
+            <i class="fa fa-sign-out"></i>
+        </a>
+    </div>
+    <!-- / navbar right -->
+
+</div>
+<!-- / navbar collapse -->
