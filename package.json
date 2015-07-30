@@ -1,6 +1,6 @@
 {
   "name": "tox-mi24-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "private": true,
@@ -54,31 +54,22 @@
     "postinstall": "npm run build",
     "start": "node serve.js",
     "build": "npm run build:scripts && npm run build:css && npm run build:copy && npm run jscs && npm run lint",
-
     "prebuild:scripts": "mkdir -p web/js",
     "build:scripts": "browserify src/app.js -o web/js/app.js",
-
     "prebuild:css": "mkdir -p web/media/css",
     "build:css": "lessc --autoprefix='last 2 versions,ie 9' src/media/less/style.less  web/media/css/style.css && cleancss --source-map -o web/media/css/style.min.css web/media/css/style.css",
-
     "build:copy": "npm run build:copy-i18n && npm run build:copy-views && npm run build:copy-fonts",
-
     "prebuild:copy-i18n": "mkdir -p web/i18n",
     "build:copy-i18n": "node scripts/copy.js src/**/translations/*.json web/i18n/",
-
     "prebuild:copy-views": "mkdir -p web/views",
     "build:copy-views": "node scripts/copy.js src/**/views/*.html web/views/",
-
     "prebuild:copy-fonts": "mkdir -p web/media/fonts",
     "build:copy-fonts": "cp -R node_modules/font-awesome/fonts/* web/media/fonts",
-
     "build-dev": "npm run build-dev:scripts && npm run build:css && npm run build:copy && npm run jscs && npm run lint",
     "prebuild-dev:scripts": "mkdir -p web/js",
     "build-dev:scripts": "browserify -d src/app.js -o web/js/app.js",
-
     "jscs": "jscs ./src ./tests ./scripts",
     "lint": "jshint ./src ./tests ./scripts --reporter node_modules/jshint-stylish/index.js",
-
     "watch": "npm run watch:copy & npm run watch:css & npm run watch:scripts",
     "watch:copy": "watch 'npm run build:copy' src/",
     "watch:css": "watch 'npm run build:css' src/media/less",
